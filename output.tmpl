@@ -2,7 +2,7 @@
 
 ```shell
 {{- range .Outputs }}
-docker pull {{ .Target }} && docker tag {{ .Target }} {{ .Source }}{{ end }}
+docker pull {{ .Target }} && docker tag {{ .Target }} {{ .Source }} && docker rmi {{ .Target }}{{ end }}
 ```
 
 ### containerd 版本（以 k8s.io namespaces 为例）
